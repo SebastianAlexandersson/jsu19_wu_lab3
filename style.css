@@ -334,13 +334,13 @@ img {
 #page-three button {
   color: var(--pageThreeBackground);
   background-color: var(--pageThreeText);
-  border-color: var(--pageThreeBackground);
+  border-color: var(--pageThreeTextShadow);
 }
 
 #page-three button:hover {
   background-color: var(--pageThreeHoverColor);
   color: var(--pageTwoText);
-  border-color: var(--pageThreeBackground);
+  border-color: var(--pageThreeHoverColor);
 }
 
 #page-three .img-container {
@@ -432,7 +432,7 @@ img {
   }
 
   button {
-    position: initial;
+    position: relative;
     margin: 2em;
   }
 
@@ -442,6 +442,20 @@ img {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+  button {
+    position: sticky;
+    margin-left: auto;
+  }
+
+  #top-layer button,
+  #bottom-layer button {
+    position: sticky;
+    margin: 2em auto;
+  }
+
+  body {
+    height: 100%;
+  }
 
   .content {
     flex-direction: column;
