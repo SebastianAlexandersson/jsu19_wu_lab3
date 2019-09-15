@@ -439,8 +439,7 @@ img {
   }
 
   #top-layer h2 {
-    margin-left: .5em;
-    margin-right: .5em;
+    max-width: 90%;
   }
 
 }
