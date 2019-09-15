@@ -1,13 +1,42 @@
+:root {
+  --fontOne: "Open Sans", sans-serif;
+  --headerFont: "Montserrat";
+
+  --topLayerText: #FDDDFC;
+  --topLayerTextShadow: #F415ED;
+  --topLayerBackground: #3A0339;
+  --topLayerHoverColor: #9A0794;
+
+  --pageOneText: #E1ECF9;
+  --pageOneTextShadow: #609CE1;
+  --pageOneBackground: #133863;
+  --pageOneHoverColor: #183BF0;
+
+  --pageTwoText: #F1F8E2;
+  --pageTwoTextShadow: #C0DF81;
+  --pageTwoBackground: #59761E;
+  --pageTwoHoverColor: #98CA32;
+
+  --pageThreeText: #975B02;
+  --pageThreeTextShadow: #FB9902;
+  --pageThreeBackground: #FFF1DC;
+  --pageThreeHoverColor: #342309;
+
+  --bottomLayerText: #FFE5DC;
+  --bottomLayerTextShadow: #FE9772;
+  --bottomLayerBackground: #FD4D0C;
+  --bottomLayerHoverColor: #A22C02;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--fontOne);
   max-width: 100vw;
-  max-height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 .container {
@@ -17,22 +46,254 @@ body {
   z-index: 0;
 }
 
+button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 1em 3em;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  position: relative;
+  font-family: var(--headerFont);
+  border-radius: 5px;
+  border: 5px solid black;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+button::after {
+  content: "\00BB";
+  font-size: 2em;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+h1 {
+  font-size: 8em;
+  font-weight: 900;
+  font-family: var(--headerFont);
+  margin: .5em;
+}
+
 .container section {
   width: 100%;
   height: 100%;
   position: absolute;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   background-color: #fff;
+  overflow: scroll;
 }
 
-#bottom-layer {
-  z-index: 1;
-  color: #fff;
-  background-color: red;
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
 }
+
+.img-container {
+  padding: 2em;
+  background-color: #fff;
+  height: auto;
+  width: 20em;
+  border-radius: 1em;
+  position: relative;
+  margin: 2em;
+  margin-left: 4em;
+}
+
+.img-container a {
+  display: block;
+  padding: 1em;
+  font-family: var(--headerFont);
+  background-color: #fff;
+  border: 5px solid black;
+  text-decoration: none;
+  width: 80%;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 2em;
+  }
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+#top-layer {
+  z-index: 5;
+  background-color: var(--topLayerBackground);
+  color: var(--topLayerText);
+  animation: tv-style 2s;
+  animation-play-state: paused;
+}
+
+#top-layer h1 {
+  color: var(--topLayerText);
+  text-shadow: 
+    0 0 0px,
+    1px 1px var(--topLayerTextShadow),
+    2px 2px var(--topLayerTextShadow),
+    3px 3px var(--topLayerTextShadow),
+    4px 4px var(--topLayerTextShadow),
+    5px 5px var(--topLayerTextShadow),
+    6px 6px var(--topLayerTextShadow),
+    7px 7px var(--topLayerTextShadow),
+    8px 8px var(--topLayerTextShadow),
+    9px 9px var(--topLayerTextShadow),
+    10px 10px var(--topLayerTextShadow),
+    11px 11px var(--topLayerTextShadow),
+    12px 12px var(--topLayerTextShadow),
+    13px 13px var(--topLayerTextShadow),
+    14px 14px var(--topLayerTextShadow),
+    15px 15px var(--topLayerTextShadow);
+}
+
+#top-layer h2 {
+  color: var(--topLayerText);
+}
+
+#top-layer button {
+  color: var(--topLayerBackground);
+  background-color: var(--topLayerText);
+  border-color: var(--topLayerTextShadow);
+}
+
+#top-layer button:hover {
+  background-color: var(--topLayerHoverColor);
+  color: var(--topLayerText);
+  border-color: var(--topLayerBackground);
+}
+
+#page-one {
+  z-index: 4;
+  background-color: var(--pageOneBackground);
+  color: var(--pageOneText);
+  animation: spin-shrink 3s;
+  animation-play-state: paused;
+}
+
+#page-one h1 {
+  color: var(--pageOneText);
+  text-shadow: 
+    0 0 0px,
+    1px 1px var(--pageOneTextShadow),
+    2px 2px var(--pageOneTextShadow),
+    3px 3px var(--pageOneTextShadow),
+    4px 4px var(--pageOneTextShadow),
+    5px 5px var(--pageOneTextShadow),
+    6px 6px var(--pageOneTextShadow),
+    7px 7px var(--pageOneTextShadow),
+    8px 8px var(--pageOneTextShadow),
+    9px 9px var(--pageOneTextShadow),
+    10px 10px var(--pageOneTextShadow),
+    11px 11px var(--pageOneTextShadow),
+    12px 12px var(--pageOneTextShadow),
+    13px 13px var(--pageOneTextShadow),
+    14px 14px var(--pageOneTextShadow),
+    15px 15px var(--pageOneTextShadow);
+}
+
+#page-one h2 {
+  color: var(--pageOneText);
+}
+
+#page-one button {
+  color: var(--pageOneBackground);
+  background-color: var(--pageOneText);
+  border-color: var(--pageOneTextShadow);
+}
+
+#page-one button:hover {
+  background-color: var(--pageOneHoverColor);
+  color: var(--pageOneText);
+  border-color: var(--pageOneBackground);
+}
+
+#page-one .img-container {
+  background-color: var(--pageOneText);
+}
+
+#page-one .img-container a {
+  background-color: var(--pageOneText);
+  color: var(--pageOneBackground);
+  border-color: var(--pageOneTextShadow);
+}
+
+#page-one .img-container a:hover {
+  background-color: var(--pageOneHoverColor);
+  color: var(--pageOneText);
+  border-color: var(--pageOneText);
+}
+
+#page-two {
+  z-index: 3;
+  animation: slide-right 2s;
+  animation-play-state: paused;
+  background-color: var(--pageTwoBackground);
+  color: var(--pageTwoText);
+}
+
+#page-two h1 {
+  color: var(--pageTwoText);
+  text-shadow: 
+    0 0 0px,
+    1px 1px var(--pageTwoTextShadow),
+    2px 2px var(--pageTwoTextShadow),
+    3px 3px var(--pageTwoTextShadow),
+    4px 4px var(--pageTwoTextShadow),
+    5px 5px var(--pageTwoTextShadow),
+    6px 6px var(--pageTwoTextShadow),
+    7px 7px var(--pageTwoTextShadow),
+    8px 8px var(--pageTwoTextShadow),
+    9px 9px var(--pageTwoTextShadow),
+    10px 10px var(--pageTwoTextShadow),
+    11px 11px var(--pageTwoTextShadow),
+    12px 12px var(--pageTwoTextShadow),
+    13px 13px var(--pageTwoTextShadow),
+    14px 14px var(--pageTwoTextShadow),
+    15px 15px var(--pageTwoTextShadow);
+}
+
+#page-two h2 {
+  color: var(--pageTwoText);
+}
+
+#page-two button {
+  color: var(--pageTwoBackground);
+  background-color: var(--pageTwoText);
+  border-color: var(--pageTwoTextShadow);
+}
+
+#page-two button:hover {
+  background-color: var(--pageTwoHoverColor);
+  color: var(--pageTwoText);
+  border-color: var(--pageTwoBackground);
+}
+
+#page-two .img-container {
+  background-color: var(--pageTwoText);
+}
+
+#page-two .img-container a {
+  background-color: var(--pageTwoText);
+  color: var(--pageTwoBackground);
+  border-color: var(--pageTwoTextShadow);
+}
+
+#page-two .img-container a:hover {
+  background-color: var(--pageTwoHoverColor);
+  color: var(--pageTwoText);
+  border-color: var(--pageTwoText);
+}
+
 
 #page-three {
   z-index: 2;
@@ -41,38 +302,186 @@ body {
   animation: shrink-bottom-left .5s;
   transform-origin: bottom left;
   animation-play-state: paused;
+  background-color: var(--pageThreeBackground);
+  color: var(--pageThreeText);
 }
 
-#page-two {
-  z-index: 3;
-  animation: slide-right 2s;
-  animation-play-state: paused;
+#page-three h1 {
+  color: var(--pageThreeText);
+  text-shadow: 
+    0 0 0px,
+    1px 1px var(--pageThreeTextShadow),
+    2px 2px var(--pageThreeTextShadow),
+    3px 3px var(--pageThreeTextShadow),
+    4px 4px var(--pageThreeTextShadow),
+    5px 5px var(--pageThreeTextShadow),
+    6px 6px var(--pageThreeTextShadow),
+    7px 7px var(--pageThreeTextShadow),
+    8px 8px var(--pageThreeTextShadow),
+    9px 9px var(--pageThreeTextShadow),
+    10px 10px var(--pageThreeTextShadow),
+    11px 11px var(--pageThreeTextShadow),
+    12px 12px var(--pageThreeTextShadow),
+    13px 13px var(--pageThreeTextShadow),
+    14px 14px var(--pageThreeTextShadow),
+    15px 15px var(--pageThreeTextShadow);
 }
 
-#page-one {
-  z-index: 4;
-  background-color: yellow;
-  color: darkblue;
-  animation: spin-shrink 3s;
-  animation-play-state: paused;
+#page-three h2 {
+  color: var(--pageThreeText);
 }
 
-#top-layer {
-  z-index: 5;
-  background-color: purple;
-  color: #fff;
-  animation: tv-style 2s;
-  animation-play-state: paused;
+#page-three button {
+  color: var(--pageThreeBackground);
+  background-color: var(--pageThreeText);
+  border-color: var(--pageThreeBackground);
+}
+
+#page-three button:hover {
+  background-color: var(--pageThreeHoverColor);
+  color: var(--pageTwoText);
+  border-color: var(--pageThreeBackground);
+}
+
+#page-three .img-container {
+  background-color: var(--pageThreeText);
+}
+
+#page-three .img-container a {
+  background-color: var(--pageThreeText);
+  color: var(--pageThreeBackground);
+  border-color: var(--pageThreeTextShadow);
+}
+
+#page-three .img-container a:hover {
+  background-color: var(--pageThreeHoverColor);
+  color: var(--pageThreeText);
+  border-color: var(--pageThreeText);
+}
+
+
+#bottom-layer {
+  z-index: 1;
+  background-color: var(--bottomLayerBackground);
+  color: var(--bottomLayerText);
+}
+
+#bottom-layer h1 {
+  color: var(--bottomLayerText);
+  text-shadow: 
+    0 0 0px,
+    1px 1px var(--bottomLayerTextShadow),
+    2px 2px var(--bottomLayerTextShadow),
+    3px 3px var(--bottomLayerTextShadow),
+    4px 4px var(--bottomLayerTextShadow),
+    5px 5px var(--bottomLayerTextShadow),
+    6px 6px var(--bottomLayerTextShadow),
+    7px 7px var(--bottomLayerTextShadow),
+    8px 8px var(--bottomLayerTextShadow),
+    9px 9px var(--bottomLayerTextShadow),
+    10px 10px var(--bottomLayerTextShadow),
+    11px 11px var(--bottomLayerTextShadow),
+    12px 12px var(--bottomLayerTextShadow),
+    13px 13px var(--bottomLayerTextShadow),
+    14px 14px var(--bottomLayerTextShadow),
+    15px 15px var(--bottomLayerTextShadow);
+}
+
+#bottom-layer h2 {
+  color: var(--bottomLayerText);
+}
+
+#bottom-layer button {
+  color: var(--bottomLayerBackground);
+  background-color: var(--bottomLayerText);
+  border: 5px solid var(--bottomLayerTextShadow);
+}
+
+#bottom-layer button:hover {
+  background-color: var(--bottomLayerHoverColor);
+  color: var(--bottomLayerText);
+  border-color: var(--bottomLayerBackground);
+}
+
+@media (max-width: 425px) {
+  ul,
+  h3 {
+    margin-left: 1em !important;
+  }
+}
+
+@media (max-width: 767px) {
+
+  h1 {
+    font-size: 5em;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  ul,
+  h3 {
+    margin-left: 3em;
+  }
+
+  .img-container {
+    width: 80%;
+    margin: 5em auto;
+    height: auto;
+  }
+
+  button {
+    position: initial;
+    margin: 2em;
+  }
+
+  h2 {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .content {
+    flex-direction: column;
+  }
+
+  ul,
+  h3 {
+    margin-left: 3em;
+  }
+
+  .img-container {
+    width: 80%;
+    margin: 5em auto;
+    height: auto;
+  }
+
+  h2 {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container section {
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  body {
+    overflow: hidden;
+  }
 }
 
 @keyframes slide-right {
   from {
-    left: 0;
+    transform: translateX(0);
     
   }
 
   to {
-    left: 100%;
+    transform: translateX(100%);
   }
 }
 
