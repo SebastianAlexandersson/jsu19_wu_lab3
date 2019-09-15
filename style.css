@@ -91,21 +91,32 @@ h1 {
 }
 
 .content {
-  display: flex;
-  flex-direction: row;
+  display: grid;
   width: 100%;
-  justify-content: center;
+  grid-template-rows: 3em 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "h2 img-cont"
+    "ul img-cont";
+}
+
+.content h2 {
+  grid-area: h2;
+}
+
+.content .pro-con {
+  grid-area: ul;
 }
 
 .img-container {
-  padding: 2em;
+  padding: 1em;
   background-color: #fff;
   height: auto;
-  width: 20em;
   border-radius: 1em;
   position: relative;
-  margin: 2em;
-  margin-left: 4em;
+  width: 18em;
+  grid-area: img-cont;
+  margin-left: 1em;
 }
 
 .img-container a {
@@ -119,12 +130,13 @@ h1 {
   border-radius: 5px;
   text-align: center;
   margin: 0 auto;
-  margin-top: 2em;
+  margin-top: 1em;
   }
 
 img {
   width: 100%;
   height: auto;
+  border-radius: 1em;
 }
 
 #top-layer {
@@ -355,7 +367,7 @@ img {
 
 #page-three .img-container a:hover {
   background-color: var(--pageThreeHoverColor);
-  color: var(--pageThreeText);
+  color: var(--pageThreeBackground);
   border-color: var(--pageThreeText);
 }
 
@@ -403,13 +415,6 @@ img {
   border-color: var(--bottomLayerBackground);
 }
 
-@media (max-width: 425px) {
-  ul,
-  h3 {
-    margin-left: 1em !important;
-  }
-}
-
 @media (max-width: 767px) {
 
   h1 {
@@ -417,18 +422,15 @@ img {
   }
 
   .content {
-    flex-direction: column;
-  }
-
-  ul,
-  h3 {
-    margin-left: 3em;
+    grid-template-areas:
+      "h2 h2"
+      "ul ul"
+      "img-cont img-cont";
+    padding: .5em;
   }
 
   .img-container {
-    width: 80%;
-    margin: 5em auto;
-    height: auto;
+    margin: auto;
   }
 
   button {
@@ -436,13 +438,11 @@ img {
     margin: 2em;
   }
 
-  h2 {
-    max-width: 80%;
-  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   button {
+    position: -webkit-sticky;
     position: sticky;
     margin-left: auto;
   }
@@ -453,39 +453,40 @@ img {
     margin: 2em auto;
   }
 
-  body {
-    height: 100%;
-  }
-
   .content {
-    flex-direction: column;
-  }
-
-  ul,
-  h3 {
-    margin-left: 3em;
+    grid-template-areas: 
+      "h2 h2"
+      "ul ul"
+      "img-cont img-cont";
+    width: 80%;
   }
 
   .img-container {
-    width: 80%;
-    margin: 5em auto;
-    height: auto;
+    margin-top: 2em;
   }
-
-  h2 {
-    max-width: 80%;
-  }
-
 }
 
 @media (min-width: 1024px) {
   .container section {
-    justify-content: center;
     overflow: hidden;
+  }
+
+  .content {
+    width: 60%;
   }
 
   body {
     overflow: hidden;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content {
+    width: 50%;
+  }
+
+  .container section {
+    justify-content: center;
   }
 }
 
