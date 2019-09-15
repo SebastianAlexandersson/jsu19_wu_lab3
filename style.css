@@ -96,7 +96,7 @@ h1 {
   grid-template-rows: 3em 1fr;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "h2 img-cont"
+    "h2 ."
     "ul img-cont";
 }
 
@@ -484,6 +484,17 @@ img {
   }
 }
 
+@media (min-width: 1024px) and (max-height: 767px) {
+  .content {
+    align-self: flex-start;
+    margin-left: 5%;
+  }
+
+  h1 {
+    margin: 0;
+  }
+}
+
 @media (min-width: 1200px) {
   .content {
     width: 50%;
@@ -491,6 +502,12 @@ img {
 
   .container section {
     justify-content: center;
+  }
+}
+
+@media (min-width: 1200px) and (max-height: 767px) {
+  .content {
+    margin-left: 20%;
   }
 }
 
